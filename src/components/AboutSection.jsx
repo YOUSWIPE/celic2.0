@@ -36,33 +36,32 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-32 relative overflow-hidden bg-white">
+    <section id="about" className="py-32 relative overflow-hidden bg-background">
       {/* Background Blobs */}
       <div className="absolute top-1/2 -left-20 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] animate-float"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 mb-24">
           <div className="lg:w-1/2 reveal-left">
-            <div className="inline-block px-4 py-1.5 bg-emerald-50 text-primary font-bold text-xs uppercase tracking-widest rounded-full mb-6">
+            <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest rounded-full mb-6">
               Expertise & Vertrauen
             </div>
-            <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-gray-900 tracking-tight leading-tight">
+            <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-foreground tracking-tight leading-tight">
               Seit über 20 Jahren Ihr <span className="text-primary italic">verlässlicher Partner</span>
             </h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-foreground/70 mb-8 leading-relaxed">
               Die Celic GmbH steht für Qualität, Sicherheit und transparente Preise. Als traditionsreiches Familienunternehmen in Wien verbinden wir handwerkliches Können mit modernster Sicherheitstechnik.
             </p>
             <div className="grid grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-3 group opacity-0 animate-[revealUp_0.8s_ease_forwards]"
-                  style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+                  className={`flex items-center space-x-3 group reveal-up reveal-delay-${index + 1}`}
                 >
-                  <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
                     <Check size={18} className="text-primary group-hover:text-white" />
                   </div>
-                  <span className="font-bold text-gray-800 tracking-tight">{benefit}</span>
+                  <span className="font-bold text-foreground tracking-tight">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -84,14 +83,13 @@ const AboutSection = () => {
             return (
               <div
                 key={index}
-                className="premium-card p-10 text-center hover:bg-emerald-50/30 opacity-0 animate-[revealScale_0.8s_ease_forwards]"
-                style={{ animationDelay: `${0.6 + index * 0.15}s` }}
+                className={`premium-card p-10 text-center hover:bg-emerald-50/30 reveal-scale reveal-delay-${index + 2}`}
               >
-                <div className="w-20 h-20 bg-primary/5 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:bg-primary transition-colors">
-                  <IconComponent size={40} className="text-primary group-hover:text-white transition-colors" />
+                <div className="w-20 h-20 bg-[#131515]/5 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:bg-[#131515] transition-colors">
+                  <IconComponent size={40} className="text-[#131515] group-hover:text-white transition-colors" />
                 </div>
-                <h4 className="text-2xl font-extrabold mb-4 text-gray-900">{cert.title}</h4>
-                <p className="text-gray-600 font-medium leading-relaxed">{cert.description}</p>
+                <h4 className="text-2xl font-extrabold mb-4 text-foreground">{cert.title}</h4>
+                <p className="text-foreground/70 font-medium leading-relaxed">{cert.description}</p>
               </div>
             );
           })}

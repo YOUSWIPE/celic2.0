@@ -21,16 +21,16 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-32 relative overflow-hidden bg-white mesh-gradient">
+    <section id="testimonials" className="py-32 relative overflow-hidden bg-background mesh-gradient">
       {/* Background Blobs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px]"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-24 reveal-up">
-          <div className="inline-block px-4 py-1.5 bg-emerald-50 text-primary font-bold text-xs uppercase tracking-widest rounded-full mb-6">
+          <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest rounded-full mb-6">
             Kundenmeinungen
           </div>
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-gray-900 tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-foreground tracking-tight">
             Was unsere <span className="text-primary italic">Kunden sagen</span>
           </h2>
           <div className="w-24 h-1.5 bg-secondary mx-auto rounded-full"></div>
@@ -40,8 +40,7 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="premium-card p-10 relative opacity-0 animate-[revealScale_0.8s_ease_forwards]"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className={`premium-card p-10 relative reveal-scale reveal-delay-${index + 1}`}
             >
               <Quote size={48} className="text-primary/10 absolute top-10 right-10" />
               <div className="flex mb-6">
@@ -51,14 +50,14 @@ const TestimonialsSection = () => {
                   </svg>
                 ))}
               </div>
-              <p className="text-xl text-gray-600 mb-8 italic leading-relaxed font-medium">"{testimonial.text}"</p>
+              <p className="text-xl text-foreground/70 mb-8 italic leading-relaxed font-medium">"{testimonial.text}"</p>
               <div className="flex items-center space-x-4 border-t border-gray-100 pt-8">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center font-bold text-primary">
+                <div className="w-12 h-12 bg-[#131515] rounded-full flex items-center justify-center font-bold text-white shadow-lg">
                   {testimonial.author.charAt(0)}
                 </div>
                 <div>
-                  <p className="font-extrabold text-gray-900 tracking-tight">{testimonial.author}</p>
-                  <p className="text-gray-400 text-sm font-bold uppercase tracking-widest">{testimonial.location}</p>
+                  <p className="font-extrabold text-foreground tracking-tight">{testimonial.author}</p>
+                  <p className="text-foreground/40 text-sm font-bold uppercase tracking-widest">{testimonial.location}</p>
                 </div>
               </div>
             </div>

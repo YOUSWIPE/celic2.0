@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,14 +26,14 @@ const Header = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-emerald-50/50 border-b border-primary/5">
+      <div className="bg-[#131515] border-b border-primary/5">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center text-sm">
-          <div className="text-gray-700 font-medium">
+          <div className="text-white/80 font-medium">
             Ihr zuverlässiger Schlüsseldienst in Wien: <span className="font-extrabold text-primary">+43 660 3022555</span>
           </div>
           <button
             onClick={() => scrollToSection('contact')}
-            className="bg-secondary hover:bg-secondary/80 text-gray-900 px-6 py-2 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-sm"
+            className="bg-primary hover:bg-emerald-600 text-white px-6 py-2 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-sm"
           >
             Sicherheitsberatung
           </button>
@@ -65,7 +66,7 @@ const Header = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="px-4 py-2 text-gray-700 hover:text-primary transition-all duration-300 font-medium relative group"
+                  className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group"
                 >
                   {item.label}
                   <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -79,39 +80,38 @@ const Header = () => {
               </button>
             </nav>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden text-gray-700"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            {/* Mobile Menu Button & Theme Toggle */}
+            <div className="flex items-center space-x-4">
+              <ThemeToggle />
+              <button
+                className="lg:hidden text-gray-700 dark:text-gray-300"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
-            <nav className="md:hidden mt-4 pb-4 space-y-3">
-              <button onClick={() => scrollToSection('home')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
-                Home
-              </button>
-              <button onClick={() => scrollToSection('services')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
-                Dienstleistungen
-              </button>
-              <button onClick={() => scrollToSection('about')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
-                Über uns
-              </button>
-              <button onClick={() => scrollToSection('team')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
-                Team
-              </button>
-              <button onClick={() => scrollToSection('testimonials')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
-                Bewertungen
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
-                Kontakt
-              </button>
-              <button onClick={() => scrollToSection('karriere')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
-                Karriere
-              </button>
+            <nav className="lg:hidden mt-4 pb-4 space-y-3 bg-background/95 dark:bg-black/95 backdrop-blur-lg px-4 rounded-2xl border border-border">
+              {[
+                { label: 'Home', id: 'home' },
+                { label: 'Dienstleistungen', id: 'services' },
+                { label: 'Über uns', id: 'about' },
+                { label: 'Team', id: 'team' },
+                { label: 'Bewertungen', id: 'testimonials' },
+                { label: 'Kontakt', id: 'contact' },
+                { label: 'Karriere', id: 'karriere' }
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block w-full text-left text-foreground/70 dark:text-gray-300 hover:text-primary transition-colors font-medium py-3 border-b border-border/50 last:border-none"
+                >
+                  {item.label}
+                </button>
+              ))}
             </nav>
           )}
         </div>

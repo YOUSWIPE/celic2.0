@@ -33,38 +33,38 @@ const KarriereSection = () => {
   };
 
   return (
-    <section id="karriere" className="py-32 relative overflow-hidden bg-gray-50/50">
+    <section id="karriere" className="py-32 relative overflow-hidden bg-background">
       {/* Decorative background elements */}
       <div className="absolute inset-0 bg-dot-grid opacity-30"></div>
       <div className="absolute top-1/2 -right-20 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[120px] animate-float"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-24 reveal-up">
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 text-gray-900 tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 text-foreground tracking-tight">
             Karriere bei <span className="text-primary italic">Celic GmbH</span>
           </h2>
           <div className="w-24 h-1.5 bg-secondary mx-auto mb-8 rounded-full"></div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
+          <p className="text-xl text-foreground/70 max-w-2xl mx-auto font-medium">
             Werden Sie Teil unseres dynamischen Teams und gestalten Sie die Sicherheit von morgen.
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto space-y-12">
           {/* Job Listing */}
-          <div className="premium-card p-12 opacity-0 animate-[revealScale_0.8s_ease_0.2s_forwards]">
+          <div className="premium-card p-12 bg-card border-none dark:border dark:border-white/5 reveal-scale reveal-delay-1">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-10">
               <div className="flex items-center space-x-6">
                 <div className="w-20 h-20 bg-primary/5 rounded-3xl flex items-center justify-center flex-shrink-0">
                   <Briefcase size={36} className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-3xl font-extrabold text-gray-900 mb-2 tracking-tight">
+                  <h3 className="text-3xl font-extrabold text-foreground mb-2 tracking-tight">
                     Allgemeinschlosser (m/w/d)
                   </h3>
                   <div className="flex flex-wrap gap-4 text-xs font-bold uppercase tracking-widest text-gray-400">
-                    <span className="px-4 py-1.5 bg-gray-100 rounded-full">Vollzeit</span>
-                    <span className="px-4 py-1.5 bg-gray-100 rounded-full">Wien</span>
-                    <span className="px-4 py-1.5 bg-emerald-50 text-primary rounded-full">Sofort</span>
+                    <span className="px-4 py-1.5 bg-primary/5 text-foreground rounded-full">Vollzeit</span>
+                    <span className="px-4 py-1.5 bg-primary/5 text-foreground rounded-full">Wien</span>
+                    <span className="px-4 py-1.5 bg-primary/10 text-primary rounded-full">Sofort</span>
                   </div>
                 </div>
               </div>
@@ -78,11 +78,11 @@ const KarriereSection = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-6">
-                <h4 className="text-xl font-extrabold text-gray-900 tracking-tight">Ihre Aufgaben:</h4>
+                <h4 className="text-xl font-extrabold text-foreground tracking-tight">Ihre Aufgaben:</h4>
                 <ul className="space-y-4">
                   {['Eigenständige Reparaturen', 'Installation von Sicherheitstechnik', 'Kompetente Kundenberatung vor Ort'].map((task, i) => (
-                    <li key={i} className="flex items-center text-gray-600 font-medium">
-                      <div className="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center mr-3">
+                    <li key={i} className="flex items-center text-foreground/70 font-medium">
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-3">
                         <Check size={14} className="text-primary" />
                       </div>
                       {task}
@@ -92,11 +92,11 @@ const KarriereSection = () => {
               </div>
 
               <div className="space-y-6">
-                <h4 className="text-xl font-extrabold text-gray-900 tracking-tight">Wir bieten:</h4>
+                <h4 className="text-xl font-extrabold text-foreground tracking-tight">Wir bieten:</h4>
                 <ul className="space-y-4">
                   {['Attraktives Gehalt nach Qualifikation', 'Moderner Firmenwagen & Ausrüstung', 'Regelmäßige Weiterbildung & Schulung'].map((offer, i) => (
-                    <li key={i} className="flex items-center text-gray-600 font-medium">
-                      <div className="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center mr-3">
+                    <li key={i} className="flex items-center text-foreground/70 font-medium">
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-3">
                         <Check size={14} className="text-primary" />
                       </div>
                       {offer}
@@ -108,7 +108,7 @@ const KarriereSection = () => {
           </div>
 
           {/* Initiativbewerbung Form */}
-          <div id="application-form" className="premium-card p-12 bg-emerald-900 opacity-0 animate-[revealScale_0.8s_ease_0.4s_forwards]">
+          <div id="application-form" className="premium-card p-12 bg-[#131515] reveal-scale reveal-delay-2">
             <div className="flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="md:w-1/2">
                 <div className="flex items-center space-x-4 mb-6">
@@ -117,7 +117,7 @@ const KarriereSection = () => {
                   </div>
                   <h3 className="text-3xl font-extrabold text-white tracking-tight">Initiativbewerbung</h3>
                 </div>
-                <p className="text-emerald-100 text-lg font-medium leading-relaxed">
+                <p className="text-white/80 text-lg font-medium leading-relaxed">
                   Keine passende Stelle dabei? Senden Sie uns Ihre Unterlagen initiativ – wir sind immer auf der Suche nach Talenten!
                 </p>
               </div>
@@ -127,7 +127,7 @@ const KarriereSection = () => {
                   <label htmlFor="app-name" className="text-xs font-bold text-emerald-200 uppercase tracking-widest ml-1">Name *</label>
                   <input
                     type="text" id="app-name" name="name" value={applicationData.name} onChange={handleChange} required
-                    className="w-full px-5 py-3 bg-white/10 border-none rounded-xl text-white focus:ring-2 focus:ring-secondary/50 transition-all font-medium placeholder:text-emerald-800"
+                    className="w-full px-5 py-3 bg-white/5 border-none rounded-xl text-white focus:ring-2 focus:ring-primary/50 transition-all font-medium placeholder:text-gray-600"
                     placeholder="Ihr Name"
                   />
                 </div>
@@ -135,7 +135,7 @@ const KarriereSection = () => {
                   <label htmlFor="app-email" className="text-xs font-bold text-emerald-200 uppercase tracking-widest ml-1">E-Mail *</label>
                   <input
                     type="email" id="app-email" name="email" value={applicationData.email} onChange={handleChange} required
-                    className="w-full px-5 py-3 bg-white/10 border-none rounded-xl text-white focus:ring-2 focus:ring-secondary/50 transition-all font-medium placeholder:text-emerald-800"
+                    className="w-full px-5 py-3 bg-white/5 border-none rounded-xl text-white focus:ring-2 focus:ring-primary/50 transition-all font-medium placeholder:text-gray-600"
                     placeholder="E-Mail Adresse"
                   />
                 </div>
@@ -143,13 +143,13 @@ const KarriereSection = () => {
                   <label htmlFor="app-message" className="text-xs font-bold text-emerald-200 uppercase tracking-widest ml-1">Nachricht *</label>
                   <textarea
                     id="app-message" name="message" value={applicationData.message} onChange={handleChange} required rows="4"
-                    className="w-full px-5 py-3 bg-white/10 border-none rounded-xl text-white focus:ring-2 focus:ring-secondary/50 transition-all font-medium placeholder:text-emerald-800 resize-none"
+                    className="w-full px-5 py-3 bg-white/5 border-none rounded-xl text-white focus:ring-2 focus:ring-primary/50 transition-all font-medium placeholder:text-gray-600 resize-none"
                     placeholder="Erzählen Sie uns über sich..."
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-secondary text-gray-900 premium-button py-4 text-lg font-extrabold hover:bg-amber-400"
+                  className="w-full bg-primary text-white premium-button py-4 text-lg font-extrabold hover:bg-emerald-600"
                 >
                   Bewerbung absenden
                 </button>

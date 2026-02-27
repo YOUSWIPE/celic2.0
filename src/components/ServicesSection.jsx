@@ -39,11 +39,11 @@ const ServicesSection = () => {
     const Icon = service.icon;
 
     return (
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-emerald-950/40 backdrop-blur-sm animate-[revealScale_0.3s_ease_out]">
-        <div className="bg-white rounded-3xl overflow-hidden shadow-2xl max-w-4xl w-full relative flex flex-col md:flex-row">
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-[#131515]/80 backdrop-blur-md animate-[revealScale_0.3s_ease_out]">
+        <div className="bg-background border border-white/10 rounded-3xl overflow-hidden shadow-2xl max-w-4xl w-full relative flex flex-col md:flex-row">
           <button
             onClick={onClose}
-            className="absolute top-6 right-6 z-10 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-all duration-300"
+            className="absolute top-6 right-6 z-10 w-10 h-10 bg-white/80 dark:bg-black/50 backdrop-blur rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-all duration-300 text-foreground"
           >
             <X size={20} />
           </button>
@@ -58,19 +58,19 @@ const ServicesSection = () => {
                 <Icon size={32} />
               </div>
               <div>
-                <h3 className="text-3xl font-extrabold text-gray-900 tracking-tight">{service.title}</h3>
+                <h3 className="text-3xl font-extrabold text-foreground tracking-tight">{service.title}</h3>
                 <p className="text-primary font-bold">{service.price}</p>
               </div>
             </div>
 
-            <p className="text-gray-600 text-lg leading-relaxed font-medium">
+            <p className="text-foreground/70 text-lg leading-relaxed font-medium">
               {service.details}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {service.features.map((f, i) => (
-                <div key={i} className="flex items-center space-x-3 text-gray-800 font-bold">
-                  <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center">
+                <div key={i} className="flex items-center space-x-3 text-foreground font-bold">
+                  <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
                     <Check size={14} className="text-primary" />
                   </div>
                   <span>{f}</span>
@@ -103,11 +103,11 @@ const ServicesSection = () => {
           <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest rounded-full mb-6 border border-primary/10">
             Was wir bieten
           </div>
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-gray-900 tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-foreground tracking-tight">
             Unsere <span className="text-primary italic border-b-4 border-secondary/30">Dienstleistungen</span>
           </h2>
           <div className="w-24 h-1.5 bg-secondary mx-auto mb-8 rounded-full shadow-[0_4px_10px_rgba(217,119,6,0.3)]"></div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
+          <p className="text-xl text-foreground/70 max-w-2xl mx-auto font-medium">
             Professionelle Schlosserei-Dienstleistungen in Wien. Wir sind Ihr Partner für alles rund um Schlösser, Schlüssel und Sicherheit.
           </p>
         </div>
@@ -118,8 +118,7 @@ const ServicesSection = () => {
             return (
               <div
                 key={index}
-                className="premium-card group opacity-0 animate-[revealUp_0.8s_cubic-bezier(0.16,1,0.3,1)_forwards] hover:border-primary/20 bg-white/80 backdrop-blur-sm"
-                style={{ animationDelay: `${index * 0.15}s` }}
+                className={`premium-card group reveal-up reveal-delay-${index + 1} hover:border-primary/20 bg-card/80 backdrop-blur-sm`}
               >
                 <div className="relative h-64 overflow-hidden border-b-4 border-primary/5">
                   <img
@@ -132,19 +131,19 @@ const ServicesSection = () => {
                     <IconComponent size={32} className="text-white" />
                   </div>
                 </div>
-                <div className="p-10">
+                <div className="p-10 bg-card">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-3xl font-extrabold text-gray-900 group-hover:text-primary transition-colors tracking-tight">
+                    <h3 className="text-3xl font-extrabold text-foreground group-hover:text-primary transition-colors tracking-tight">
                       {service.title}
                     </h3>
-                    <span className="text-primary font-bold text-sm bg-emerald-50 px-3 py-1 rounded-lg border border-primary/5">{service.price}</span>
+                    <span className="text-primary font-bold text-sm bg-primary/5 px-3 py-1 rounded-lg border border-primary/5">{service.price}</span>
                   </div>
-                  <p className="text-gray-600 mb-8 font-medium leading-relaxed">
+                  <p className="text-foreground/70 mb-8 font-medium leading-relaxed">
                     {service.description}
                   </p>
                   <button
                     onClick={() => setSelectedService(service)}
-                    className="w-full flex items-center justify-center space-x-3 bg-emerald-50 text-primary font-extrabold uppercase tracking-widest text-sm py-4 rounded-xl border border-primary/5 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
+                    className="w-full flex items-center justify-center space-x-3 bg-foreground text-background font-extrabold uppercase tracking-widest text-sm py-4 rounded-xl border border-white/10 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
                   >
                     <span>Details & Preise</span>
                     <div className="w-6 h-px bg-current"></div>
