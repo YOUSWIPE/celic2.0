@@ -38,8 +38,8 @@ const AboutPage = () => {
                                     <div className="text-sm font-bold uppercase tracking-widest text-white/60">Teammitglieder</div>
                                 </div>
                                 <div className="p-8 border border-white/10 rounded-2xl bg-white/5">
-                                    <div className="text-4xl font-extrabold text-primary mb-2">24/7</div>
-                                    <div className="text-sm font-bold uppercase tracking-widest text-white/60">Notdienst</div>
+                                    <div className="text-4xl font-extrabold text-primary mb-2">100%</div>
+                                    <div className="text-sm font-bold uppercase tracking-widest text-white/60">Transparenz</div>
                                 </div>
                             </div>
                         </div>

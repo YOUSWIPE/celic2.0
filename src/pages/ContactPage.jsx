@@ -26,7 +26,6 @@ const ContactPage = () => {
                                 </div>
                                 <h4 className="text-xl font-bold mb-2">Telefon</h4>
                                 <p className="text-foreground/70 font-medium">+43 660 3022555</p>
-                                <p className="text-foreground/70 text-sm font-bold text-primary mt-2">24/7 Notdienst</p>
                             </div>
 
                             <div className="premium-card p-10 flex flex-col items-center text-center">

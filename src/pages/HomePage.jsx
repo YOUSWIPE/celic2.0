@@ -40,7 +40,7 @@ const HomePage = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-4xl font-extrabold mb-8 italic text-primary">Unsere Leistungen</h2>
             <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto">
-              Von der Notöffnung bis zum individuellen Metallbau – wir bieten erstklassigen Service in Wien.
+              Vom fachmännischen Metallbau bis zur Sicherheitstechnik – wir bieten erstklassigen Service in Wien.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {[
