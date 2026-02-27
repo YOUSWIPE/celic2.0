@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { DoorOpen, Key, Shield, Check, X, Clock, Euro, ShieldCheck } from 'lucide-react';
+import MagneticButton from './MagneticButton';
 
 const ServicesSection = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -141,13 +142,15 @@ const ServicesSection = () => {
                   <p className="text-foreground/70 mb-8 font-medium leading-relaxed">
                     {service.description}
                   </p>
-                  <button
-                    onClick={() => setSelectedService(service)}
-                    className="w-full flex items-center justify-center space-x-3 bg-foreground text-background font-extrabold uppercase tracking-widest text-sm py-4 rounded-xl border border-white/10 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
-                  >
-                    <span>Details & Preise</span>
-                    <div className="w-6 h-px bg-current"></div>
-                  </button>
+                  <MagneticButton strength={0.15} className="w-full">
+                    <button
+                      onClick={() => setSelectedService(service)}
+                      className="w-full flex items-center justify-center space-x-3 bg-foreground text-background font-extrabold uppercase tracking-widest text-sm py-4 rounded-xl border border-white/10 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
+                    >
+                      <span>Details & Preise</span>
+                      <div className="w-6 h-px bg-current"></div>
+                    </button>
+                  </MagneticButton>
                 </div>
               </div>
             );

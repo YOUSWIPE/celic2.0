@@ -1,6 +1,7 @@
 // HeroSection.jsx
 import React, { useEffect, useRef } from 'react';
 import { Phone } from 'lucide-react';
+import MagneticButton from './MagneticButton';
 
 const HeroSection = () => {
   const videoRef = useRef(null);
@@ -68,20 +69,25 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 reveal-up reveal-delay-3">
-            <a
-              href="tel:+436603022555"
-              className="group relative bg-primary text-white premium-button px-12 py-5 text-xl font-extrabold flex items-center space-x-3"
-            >
-              <Phone size={24} className="group-hover:animate-bounce" />
-              <span>Jetzt Anrufen</span>
-              <div className="absolute inset-x-0 bottom-0 h-1 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full"></div>
-            </a>
-            <button
-              onClick={() => scrollToSection('services')}
-              className="bg-foreground text-background premium-button border border-border px-12 py-5 text-xl font-extrabold hover:bg-primary hover:text-white shadow-xl transition-all duration-300"
-            >
-              Unsere Leistungen
-            </button>
+            <MagneticButton strength={0.2}>
+              <a
+                href="tel:+436603022555"
+                className="group relative bg-primary text-white premium-button px-12 py-5 text-xl font-extrabold flex items-center space-x-3"
+              >
+                <Phone size={24} className="group-hover:animate-bounce" />
+                <span>Jetzt Anrufen</span>
+                <div className="absolute inset-x-0 bottom-0 h-1 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full"></div>
+              </a>
+            </MagneticButton>
+
+            <MagneticButton strength={0.2}>
+              <button
+                onClick={() => scrollToSection('services')}
+                className="bg-foreground text-background premium-button border border-border px-12 py-5 text-xl font-extrabold hover:bg-primary hover:text-white shadow-xl transition-all duration-300"
+              >
+                Unsere Leistungen
+              </button>
+            </MagneticButton>
           </div>
         </div>
       </div>

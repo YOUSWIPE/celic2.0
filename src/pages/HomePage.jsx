@@ -10,6 +10,7 @@ import KarriereSection from '../components/KarriereSection';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import Preloader from '../components/Preloader';
+import CustomCursor from '../components/CustomCursor';
 import { Toaster } from '../components/ui/toaster';
 import { useState, useEffect } from 'react';
 
@@ -63,6 +64,7 @@ const HomePage = () => {
         <KarriereSection />
         <Footer />
         <WhatsAppButton />
+        <CustomCursor />
         <Toaster />
       </div>
     </>

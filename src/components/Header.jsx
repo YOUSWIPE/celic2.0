@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ShieldCheck, Moon, Sun } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import MagneticButton from './MagneticButton';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,21 +64,24 @@ const Header = () => {
                 { label: 'Kontakt', id: 'contact' },
                 { label: 'Karriere', id: 'karriere' }
               ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group"
-                >
-                  {item.label}
-                  <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                </button>
+                <MagneticButton key={item.id} strength={0.4}>
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group"
+                  >
+                    {item.label}
+                    <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  </button>
+                </MagneticButton>
               ))}
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="ml-4 bg-primary text-white premium-button hover:bg-emerald-900"
-              >
-                Jetzt Anfragen
-              </button>
+              <MagneticButton strength={0.2}>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="ml-4 bg-primary text-white premium-button hover:bg-emerald-900"
+                >
+                  Jetzt Anfragen
+                </button>
+              </MagneticButton>
             </nav>
 
             {/* Mobile Menu Button & Theme Toggle */}
