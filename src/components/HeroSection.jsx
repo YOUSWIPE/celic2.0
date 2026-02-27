@@ -34,66 +34,71 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden mesh-gradient">
+      {/* Dynamic Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[100px] animate-float"></div>
+        <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] animate-float" style={{ animationDelay: '-2s' }}></div>
+      </div>
       {/* Video Layer */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          preload="auto"
-          controls
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-50 contrast-125 brightness-110"
         >
-          {/* Спробуй надійний прямий mp4-URL */}
-          <source src="https://media.istockphoto.com/id/1208203233/video/opening-a-door-to-house-with-key-close-up.mp4?s=mp4-640x640-is&k=20&c=SQKt-E05-6bFNlSHhk2yQMdXGiaxCW29W8ZC7xwsRNY=" type="video/mp4" />
-        </video>
-
-        {/* Тимчасово вимикаємо накладки, щоб перевірити видимість */}
-        {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 animate-gradient"></div>
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-black bg-opacity-20 pointer-events-none"></div> */}
+          {/* Original iStock locksmith video link */}
+          <source src="https://media.istockphoto.com/id/1208203233/video/opening-a-door-to-house-with-key-close-up.mp4?s=mp4-640x640-is&k=20&c=SQKt-E05-6bFNlSHhk2yQMdXGiaxCW29W8ZC7xwsRNY=" type="video/mp4" />        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-50/20 to-background"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-white py-32">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Ihr zuverlässiger<br />
-          <span className="text-white">Schlüsseldienst in Wien</span>
-        </h1>
-        <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto">
-          24/7 Notdienst • Faire Preise • Schnelle Hilfe • Professionelle Lösungen für alle Schloss- і Sicherheitsprobleme
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href="tel:+4312345678"
-            className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            <Phone size={24} />
-            Jetzt anrufen: +43 1 234 5678
-          </a>
-          <button
-            onClick={() => scrollToSection('contact')}
-            className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-red-700 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            Kostenvoranschlag anfordern
-          </button>
+      <div className="relative z-10 container mx-auto px-4 text-center py-24">
+        <div className="reveal-up space-y-10">
+
+          <h1 className="text-5xl md:text-8xl font-extrabold text-gray-900 leading-[1.1] tracking-tight max-w-5xl mx-auto">
+            Sicherheit, die <br />
+            <span className="text-primary italic">Maßstäbe</span> setzt.
+          </h1>
+
+          <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed opacity-0 animate-[revealUp_0.8s_ease_0.2s_forwards]">
+            Ihr zertifizierter Schlüsseldienst in Wien. Schnell vor Ort, transparent im Preis und kompromisslos in der Qualität.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 opacity-0 animate-[revealUp_0.8s_ease_0.4s_forwards]">
+            <a
+              href="tel:+436603022555"
+              className="group relative bg-primary text-white premium-button px-12 py-5 text-xl font-extrabold flex items-center space-x-3"
+            >
+              <Phone size={24} className="group-hover:animate-bounce" />
+              <span>Jetzt Anrufen</span>
+              <div className="absolute inset-x-0 bottom-0 h-1 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full"></div>
+            </a>
+            <button
+              onClick={() => scrollToSection('services')}
+              className="bg-white/50 backdrop-blur-md text-gray-900 premium-button border border-gray-200 px-12 py-5 text-xl font-extrabold hover:bg-white shadow-xl"
+            >
+              Unsere Leistungen
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Curved Bottom */}
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
+        <div className="w-6 h-10 border-2 border-gray-900 rounded-full flex justify-center p-1">
+          <div className="w-1.5 h-3 bg-gray-900 rounded-full"></div>
+        </div>
+      </div>
+
+      {/* Curved Bottom 
       <div className="absolute bottom-0 left-0 right-0 z-10">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
           <path d="M0 0L1440 0L1440 120C1440 120 1080 60 720 60C360 60 0 120 0 120L0 0Z" fill="white" />
         </svg>
-      </div>
+      </div>*/}
     </section>
   );
 };

@@ -25,56 +25,57 @@ const Header = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-emerald-50/50 border-b border-primary/5">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center text-sm">
-          <div className="text-gray-700">
-            Ihr zuverlässiger Schlüsseldienst in Wien: <span className="font-semibold">+43 1 234 5678</span>
+          <div className="text-gray-700 font-medium">
+            Ihr zuverlässiger Schlüsseldienst in Wien: <span className="font-extrabold text-primary">+43 660 3022555</span>
           </div>
-          <button 
+          <button
             onClick={() => scrollToSection('contact')}
-            className="bg-red-700 hover:bg-red-800 text-white px-6 py-2 rounded-r-full transition-all duration-300 transform hover:scale-105"
+            className="bg-secondary hover:bg-secondary/80 text-gray-900 px-6 py-2 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-sm"
           >
-            Jetzt Anfragen!
+            Sicherheitsberatung
           </button>
         </div>
       </div>
 
       {/* Main Header */}
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg' : 'bg-white'
-      }`}>
-        <div className="container mx-auto px-4 py-4">
+      <header className={`sticky top-0 z-50 transition-all duration-500 ${isScrolled ? 'glass-header py-2 shadow-lg shadow-primary/5' : 'bg-transparent py-6'
+        }`}>
+        <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="text-3xl font-bold">
-                <span className="text-red-700">Celic</span>
-                <span className="text-gray-800"> GmbH</span>
+            <Link to="/" className="flex items-center space-x-2 group">
+              <div className="text-3xl font-bold transition-transform duration-300 group-hover:scale-105">
+                <img src='logo-no-bg.png' alt="Logo" className="h-12 w-auto" />
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-red-700 transition-colors font-medium">
-                Home
-              </button>
-              <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-red-700 transition-colors font-medium">
-                Dienstleistungen
-              </button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-red-700 transition-colors font-medium">
-                Über uns
-              </button>
-              <button onClick={() => scrollToSection('team')} className="text-gray-700 hover:text-red-700 transition-colors font-medium">
-                Team
-              </button>
-              <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-red-700 transition-colors font-medium">
-                Bewertungen
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-red-700 transition-colors font-medium">
-                Kontakt
-              </button>
-              <button onClick={() => scrollToSection('karriere')} className="text-gray-700 hover:text-red-700 transition-colors font-medium">
-                Karriere
+            <nav className="hidden lg:flex items-center space-x-1">
+              {[
+                { label: 'Home', id: 'home' },
+                { label: 'Dienstleistungen', id: 'services' },
+                { label: 'Über uns', id: 'about' },
+                { label: 'Team', id: 'team' },
+                { label: 'Bewertungen', id: 'testimonials' },
+                { label: 'Kontakt', id: 'contact' },
+                { label: 'Karriere', id: 'karriere' }
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="px-4 py-2 text-gray-700 hover:text-primary transition-all duration-300 font-medium relative group"
+                >
+                  {item.label}
+                  <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                </button>
+              ))}
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="ml-4 bg-primary text-white premium-button hover:bg-emerald-900"
+              >
+                Jetzt Anfragen
               </button>
             </nav>
 
@@ -90,25 +91,25 @@ const Header = () => {
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
             <nav className="md:hidden mt-4 pb-4 space-y-3">
-              <button onClick={() => scrollToSection('home')} className="block w-full text-left text-gray-700 hover:text-red-700 transition-colors font-medium py-2">
+              <button onClick={() => scrollToSection('home')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
                 Home
               </button>
-              <button onClick={() => scrollToSection('services')} className="block w-full text-left text-gray-700 hover:text-red-700 transition-colors font-medium py-2">
+              <button onClick={() => scrollToSection('services')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
                 Dienstleistungen
               </button>
-              <button onClick={() => scrollToSection('about')} className="block w-full text-left text-gray-700 hover:text-red-700 transition-colors font-medium py-2">
+              <button onClick={() => scrollToSection('about')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
                 Über uns
               </button>
-              <button onClick={() => scrollToSection('team')} className="block w-full text-left text-gray-700 hover:text-red-700 transition-colors font-medium py-2">
+              <button onClick={() => scrollToSection('team')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
                 Team
               </button>
-              <button onClick={() => scrollToSection('testimonials')} className="block w-full text-left text-gray-700 hover:text-red-700 transition-colors font-medium py-2">
+              <button onClick={() => scrollToSection('testimonials')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
                 Bewertungen
               </button>
-              <button onClick={() => scrollToSection('contact')} className="block w-full text-left text-gray-700 hover:text-red-700 transition-colors font-medium py-2">
+              <button onClick={() => scrollToSection('contact')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
                 Kontakt
               </button>
-              <button onClick={() => scrollToSection('karriere')} className="block w-full text-left text-gray-700 hover:text-red-700 transition-colors font-medium py-2">
+              <button onClick={() => scrollToSection('karriere')} className="block w-full text-left text-gray-700 hover:text-green-700 transition-colors font-medium py-2">
                 Karriere
               </button>
             </nav>

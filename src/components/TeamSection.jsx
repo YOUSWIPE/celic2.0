@@ -19,50 +19,59 @@ const TeamSection = () => {
     {
       name: 'Thomas Weber',
       role: 'Notdienst-Spezialist',
-      description: 'Unser 24/7 Notdienst-Experte. Schnelle Türöffnungen und Reparaturen sind seine Spezialtät.',
+      description: 'Schnelle Türöffnungen und Reparaturen sind seine Spezialtät.',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
       skills: ['Notdienst', 'Reparatur']
     }
   ];
 
   return (
-    <section id="team" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-            Unser Team
+    <section id="team" className="py-32 relative overflow-hidden bg-gray-50/30">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 bg-dot-grid opacity-30"></div>
+      <div className="absolute bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-24 reveal-up">
+          <div className="inline-block px-4 py-1.5 bg-emerald-50 text-primary font-bold text-xs uppercase tracking-widest rounded-full mb-6">
+            Experten vor Ort
+          </div>
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 text-gray-900 tracking-tight">
+            Unser <span className="text-primary italic">Expertenteam</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Lernen Sie die Experten kennen, die Ihnen in Notfällen zur Seite stehen
+          <div className="w-24 h-1.5 bg-secondary mx-auto mb-8 rounded-full"></div>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
+            Lernen Sie die Profis kennen, die Ihnen in Wien und Umgebung mit Rat und Tat zur Seite stehen.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {team.map((member, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              className="premium-card group opacity-0 animate-[revealUp_0.8s_ease_forwards]"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-96 overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end">
-                  <div className="p-6 text-white w-full">
-                    <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
-                    <p className="text-red-400 text-lg font-semibold mb-3">{member.role}</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end">
+                  <div className="p-8 text-white w-full">
+                    <p className="text-secondary font-bold text-sm uppercase tracking-widest mb-2">{member.role}</p>
+                    <h3 className="text-3xl font-extrabold mb-1 tracking-tight">{member.name}</h3>
                   </div>
                 </div>
               </div>
-              <div className="p-6">
-                <p className="text-gray-600 mb-4">{member.description}</p>
+              <div className="p-8">
+                <p className="text-gray-600 mb-6 font-medium leading-relaxed">{member.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {member.skills.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium"
+                      className="px-4 py-1.5 bg-emerald-50 text-primary rounded-full text-xs font-bold uppercase tracking-wider border border-primary/5"
                     >
                       {skill}
                     </span>
