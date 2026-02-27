@@ -1,6 +1,7 @@
 // HeroSection.jsx
 import React, { useEffect, useRef } from 'react';
-import { Phone } from 'lucide-react';
+import { Phone, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import MagneticButton from './MagneticButton';
 
 const HeroSection = () => {
@@ -81,12 +82,14 @@ const HeroSection = () => {
             </MagneticButton>
 
             <MagneticButton strength={0.2}>
-              <button
-                onClick={() => scrollToSection('services')}
-                className="bg-foreground text-background premium-button border border-border px-12 py-5 text-xl font-extrabold hover:bg-primary hover:text-white shadow-xl transition-all duration-300"
+              <Link
+                to="/kontakt"
+                className="bg-primary text-white premium-button px-10 py-5 text-xl flex items-center justify-center space-x-4 group overflow-hidden relative shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]"
               >
-                Unsere Leistungen
-              </button>
+                <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                <span className="relative z-10">Kostenlos Beraten</span>
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform relative z-10" />
+              </Link>
             </MagneticButton>
           </div>
         </div>

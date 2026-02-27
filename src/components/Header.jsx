@@ -16,13 +16,14 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
-  };
+  const navItems = [
+    { label: 'Home', path: '/' },
+    { label: 'Dienstleistungen', path: '/services' },
+    { label: 'Über uns', path: '/about' },
+    { label: 'Team', path: '/team' },
+    { label: 'Kontakt', path: '/kontakt' },
+    { label: 'Karriere', path: '/karriere' }
+  ];
 
   return (
     <>
@@ -32,12 +33,12 @@ const Header = () => {
           <div className="text-white/80 font-medium">
             Ihr zuverlässiger Schlüsseldienst in Wien: <span className="font-extrabold text-primary">+43 660 3022555</span>
           </div>
-          <button
-            onClick={() => scrollToSection('contact')}
+          <Link
+            to="/kontakt"
             className="bg-primary hover:bg-emerald-600 text-white px-6 py-2 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-sm"
           >
             Sicherheitsberatung
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -54,33 +55,27 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
-              {[
-                { label: 'Home', id: 'home' },
-                { label: 'Dienstleistungen', id: 'services' },
-                { label: 'Über uns', id: 'about' },
-                { label: 'Team', id: 'team' },
-                { label: 'Bewertungen', id: 'testimonials' },
-                { label: 'Kontakt', id: 'contact' },
-                { label: 'Karriere', id: 'karriere' }
-              ].map((item) => (
-                <MagneticButton key={item.id} strength={0.4}>
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group"
+            <nav className="hidden lg:flex items-center space-x-6">
+              {navItems.map((item) => (
+                <MagneticButton key={item.path} strength={0.4}>
+                  <Link
+                    key={item.label}
+                    to={item.path}
+                    className="text-foreground/70 font-bold hover:text-primary transition-all text-lg uppercase tracking-wider relative group"
+                    style={{ fontFamily: "'Bank Gothic', sans-serif" }}
                   >
                     {item.label}
                     <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                  </button>
+                  </Link>
                 </MagneticButton>
               ))}
               <MagneticButton strength={0.2}>
-                <button
-                  onClick={() => scrollToSection('contact')}
+                <Link
+                  to="/kontakt"
                   className="ml-4 bg-primary text-white premium-button hover:bg-emerald-900"
                 >
                   Jetzt Anfragen
-                </button>
+                </Link>
               </MagneticButton>
             </nav>
 
@@ -98,23 +93,17 @@ const Header = () => {
 
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
-            <nav className="lg:hidden mt-4 pb-4 space-y-3 bg-background/95 dark:bg-black/95 backdrop-blur-lg px-4 rounded-2xl border border-border">
-              {[
-                { label: 'Home', id: 'home' },
-                { label: 'Dienstleistungen', id: 'services' },
-                { label: 'Über uns', id: 'about' },
-                { label: 'Team', id: 'team' },
-                { label: 'Bewertungen', id: 'testimonials' },
-                { label: 'Kontakt', id: 'contact' },
-                { label: 'Karriere', id: 'karriere' }
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-foreground/70 dark:text-gray-300 hover:text-primary transition-colors font-medium py-3 border-b border-border/50 last:border-none"
+            <nav className="lg:hidden mt-6 pb-6 space-y-2 bg-background/98 dark:bg-black/98 backdrop-blur-xl px-4 rounded-3xl border border-border shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300">
+              {navItems.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-4 text-xl font-bold text-foreground/80 hover:text-primary transition-colors uppercase tracking-widest border-b border-border/50 last:border-none"
+                  style={{ fontFamily: "'Bank Gothic', sans-serif" }}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
             </nav>
           )}

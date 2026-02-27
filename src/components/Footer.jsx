@@ -1,13 +1,7 @@
-import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <footer className="bg-background relative overflow-hidden border-t border-border pt-32 pb-12 transition-colors duration-500">
@@ -33,16 +27,22 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xs font-bold text-foreground/40 uppercase tracking-widest mb-8">Navigation</h3>
+            <h3 className="text-sm font-bold text-foreground/40 uppercase tracking-widest mb-8">Navigation</h3>
             <ul className="space-y-4">
-              {['home', 'services', 'about', 'team'].map((id) => (
-                <li key={id}>
-                  <button
-                    onClick={() => scrollToSection(id)}
-                    className="text-foreground/70 font-bold hover:text-primary transition-colors capitalize text-lg"
+              {[
+                { label: 'Startseite', path: '/' },
+                { label: 'Leistungen', path: '/services' },
+                { label: 'Über Uns', path: '/about' },
+                { label: 'Unser Team', path: '/team' },
+                { label: 'Karriere', path: '/karriere' }
+              ].map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    className="text-foreground/70 font-bold hover:text-primary transition-colors text-lg"
                   >
-                    {id === 'home' ? 'Startseite' : id === 'services' ? 'Leistungen' : id === 'about' ? 'Über Uns' : 'Unser Team'}
-                  </button>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -50,7 +50,7 @@ const Footer = () => {
 
           {/* Contact Details */}
           <div>
-            <h3 className="text-xs font-bold text-foreground/40 uppercase tracking-widest mb-8">Kontakt</h3>
+            <h3 className="text-sm font-bold text-foreground/40 uppercase tracking-widest mb-8">Kontakt</h3>
             <div className="space-y-6">
               <div className="flex items-center space-x-3 text-foreground/70 font-bold">
                 <Phone size={20} className="text-primary" />

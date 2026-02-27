@@ -44,7 +44,7 @@ const ContactSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-24 reveal-up">
-          <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest rounded-full mb-6">
+          <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest rounded-full mb-6">
             Ihr Fachmann vor Ort
           </div>
           <h2 className="text-4xl md:text-6xl font-extrabold mb-6 text-foreground tracking-tight">
@@ -72,7 +72,7 @@ const ContactSection = () => {
                       <item.icon size={28} className="text-primary group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-foreground/40 uppercase tracking-widest mb-1">{item.title}</h4>
+                      <h4 className="text-base font-bold text-foreground/40 uppercase tracking-widest mb-1">{item.title}</h4>
                       <a href={item.href} className="text-2xl font-extrabold text-foreground hover:text-primary transition-colors tracking-tight">
                         {item.value}
                       </a>
@@ -93,8 +93,8 @@ const ContactSection = () => {
                       </p>
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-foreground/40 uppercase tracking-widest mb-2">Werkstatt</h4>
-                      <p className="text-lg font-bold text-foreground leading-tight">
+                      <h4 className="text-base font-bold text-foreground/40 uppercase tracking-widest mb-2">Werkstatt</h4>
+                      <p className="text-xl font-bold text-foreground leading-tight">
                         Bahnstraße 4<br />
                         2283 Obersiebenbrunn
                       </p>
@@ -139,10 +139,10 @@ const ContactSection = () => {
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
-                  <label htmlFor="name" className="text-sm font-bold text-foreground/40 uppercase tracking-widest ml-1">Name *</label>
+                  <label htmlFor="name" className="text-base font-bold text-foreground/40 uppercase tracking-widest ml-1">Name *</label>
                   <input
                     type="text" id="name" name="name" value={formData.name} onChange={handleChange} required
-                    className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:ring-2 focus:ring-primary/20 transition-all font-bold placeholder:text-foreground/20 text-foreground"
+                    className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:ring-2 focus:ring-primary/20 transition-all font-bold placeholder:text-foreground/20 text-foreground text-lg"
                     placeholder="Ihr Name"
                   />
                 </div>

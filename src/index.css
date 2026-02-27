@@ -4,6 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Bank Gothic';
+    src: url('../public/fonts/Bank Gothic Light Regular.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bank Gothic';
+    src: url('../public/fonts/BankGothic Md BT.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bank Gothic';
+    src: url('../public/fonts/BankGothic Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 body {
     margin: 0;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -48,12 +69,15 @@ body {
 }
 
 h1,
-h2,
+h2 {
+    font-family: 'Bank Gothic', sans-serif;
+}
+
 h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 code {

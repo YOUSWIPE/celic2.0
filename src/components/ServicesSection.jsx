@@ -101,7 +101,7 @@ const ServicesSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-24 reveal-up">
-          <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest rounded-full mb-6 border border-primary/10">
+          <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold text-sm uppercase tracking-widest rounded-full mb-6 border border-primary/10">
             Was wir bieten
           </div>
           <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-foreground tracking-tight">
@@ -145,7 +145,7 @@ const ServicesSection = () => {
                   <MagneticButton strength={0.15} className="w-full">
                     <button
                       onClick={() => setSelectedService(service)}
-                      className="w-full flex items-center justify-center space-x-3 bg-foreground text-background font-extrabold uppercase tracking-widest text-sm py-4 rounded-xl border border-white/10 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
+                      className="w-full flex items-center justify-center space-x-3 bg-foreground text-background font-extrabold uppercase tracking-widest text-base py-4 rounded-xl border border-white/10 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
                     >
                       <span>Details & Preise</span>
                       <div className="w-6 h-px bg-current"></div>
