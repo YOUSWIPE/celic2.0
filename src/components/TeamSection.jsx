@@ -6,63 +6,63 @@ const TeamSection = () => {
       name: 'Danijel Celic',
       role: 'Geschäftsführer',
       description: '',
-      image: '/images/danijel.webp',
+      image: '/images/Danijel.webp',
       skills: []
     },
     {
       name: 'Suzana Celic',
       role: 'Assistentin der Geschäftsführung',
       description: '',
-      image: '/images/suzana.webp',
+      image: '/images/Suzana.webp',
       skills: []
     },
     {
       name: 'Anja Celic',
       role: 'Assistentin der Geschäftsführung',
       description: '',
-      image: '/images/anja.webp',
+      image: '/images/Anja.webp',
       skills: []
     },
     {
       name: 'Nebojsa Cikojevic',
       role: 'Schlosser',
       description: '',
-      image: '/images/nebojsa.webp',
+      image: '/images/Nebojsa.webp',
       skills: []
     },
     {
       name: 'David Markovic',
       role: 'Schlosser',
       description: '',
-      image: '/images/david.webp',
+      image: '/images/David.webp',
       skills: []
     },
     {
       name: 'Slobodan Walchshofer',
       role: 'Schlosser',
       description: '',
-      image: '/images/slobodan.webp',
+      image: '/images/Slobodan.webp',
       skills: []
     },
     {
       name: 'Andrej Celic',
       role: 'Lehrling',
       description: '',
-      image: '/images/andrej.webp',
+      image: '/images/Andrej.webp',
       skills: []
     },
     {
       name: 'Vladislav Undrul',
       role: 'Lehrling',
       description: '',
-      image: '/images/vladislav.webp',
+      image: '/images/Vladislav.webp',
       skills: []
     },
     {
       name: 'Charlie',
       role: 'Empfangschef',
       description: '',
-      image: '/images/charlie.webp',
+      image: '/images/Charlie.webp',
       skills: []
     }
   ];
