@@ -89,37 +89,7 @@ const TeamSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {team.map((member, index) => (
-            <div
-              key={index}
-              className={`premium-card group reveal-up reveal-delay-${index + 1}`}
-            >
-              <div className="relative h-100 overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#131515] via-[#131515]/20 to-transparent flex items-end">
-                  <div className="p-8 text-white w-full">
-                    <p className="font-bold text-sm uppercase tracking-widest mb-2">{member.role}</p>
-                    <h3 className="text-green-600 text-3xl font-extrabold mb-1 tracking-tight">{member.name}</h3>
-                  </div>
-                </div>
-              </div>
-              {/*<div className="p-8 bg-card">
-                <p className="text-foreground/70 mb-6 font-medium leading-relaxed">{member.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {member.skills.map((skill, idx) => (
-                    <span
-                      key={idx}
-                      className="px-4 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider border border-primary/5"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>*/}
-            </div>
+            <TeamMember key={index} member={member} index={index} />
           ))}
         </div>
       </div>
