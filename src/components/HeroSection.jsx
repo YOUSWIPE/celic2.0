@@ -50,23 +50,22 @@ const HeroSection = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-50 contrast-125 brightness-110"
+          className="w-full h-full object-cover brightness-50"
         >
           {/* Original iStock locksmith video link */}
-          <source src="https://media.istockphoto.com/id/1208203233/video/opening-a-door-to-house-with-key-close-up.mp4?s=mp4-640x640-is&k=20&c=SQKt-E05-6bFNlSHhk2yQMdXGiaxCW29W8ZC7xwsRNY=" type="video/mp4" />        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-50/20 dark:via-emerald-950/20 to-background"></div>
+          <source src="/hero.webm" type="video/webm" />        </video>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 text-center py-24">
         <div className="reveal-up space-y-10">
 
-          <h1 className="text-5xl md:text-8xl font-extrabold text-foreground leading-[1.1] tracking-tight max-w-5xl mx-auto">
+          <h1 className="text-5xl md:text-8xl font-extrabold text-white leading-[1.1] tracking-tight max-w-5xl mx-auto">
             Sicherheit, die <br />
             <span className="text-primary italic">Maßstäbe</span> setzt.
           </h1>
 
-          <p className="text-xl md:text-2xl text-foreground/70 max-w-2xl mx-auto font-medium leading-relaxed reveal-up reveal-delay-2">
-            Ihr zertifizierter Schlüsseldienst in Wien. Schnell vor Ort, transparent im Preis und kompromisslos in der Qualität.
+          <p className="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto font-medium leading-relaxed reveal-up reveal-delay-2">
+            Ihre Reparaturschlosserei und Sicherheitstechnik in Wien und Niederösterreich. Schnell vor Ort, transparent im Preis und kompromisslos in der Qualität.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 reveal-up reveal-delay-3">

@@ -3,11 +3,11 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TeamSection from '../components/TeamSection';
 import WhatsAppButton from '../components/WhatsAppButton';
-import CustomCursor from '../components/CustomCursor';
 import useScrollReveal from '../hooks/use-scroll-reveal';
 
 const TeamPage = () => {
     useScrollReveal();
+
     return (
         <div className="min-h-screen bg-background text-foreground transition-all duration-1000">
             <Header />
@@ -31,7 +31,6 @@ const TeamPage = () => {
             </div>
             <Footer />
             <WhatsAppButton />
-            <CustomCursor />
         </div>
     );
 };

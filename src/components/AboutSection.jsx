@@ -69,7 +69,7 @@ const AboutSection = () => {
           <div className="lg:w-1/2 relative">
             <div className="absolute -top-6 -right-6 w-full h-full bg-secondary/10 rounded-2xl -z-10"></div>
             <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop"
+              src="/images/outdoor.webp"
               alt="Celic GmbH Team"
               className="w-full h-full object-cover rounded-2xl shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
             />

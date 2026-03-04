@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AboutSection from '../components/AboutSection';
 import WhatsAppButton from '../components/WhatsAppButton';
-import CustomCursor from '../components/CustomCursor';
 import useScrollReveal from '../hooks/use-scroll-reveal';
 
 const AboutPage = () => {
@@ -48,7 +47,6 @@ const AboutPage = () => {
             </div>
             <Footer />
             <WhatsAppButton />
-            <CustomCursor />
         </div>
     );
 };

@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import KarriereSection from '../components/KarriereSection';
 import WhatsAppButton from '../components/WhatsAppButton';
-import CustomCursor from '../components/CustomCursor';
 import { Toaster } from '../components/ui/toaster';
 import useScrollReveal from '../hooks/use-scroll-reveal';
 
@@ -37,7 +36,6 @@ const KarrierePage = () => {
             </div>
             <Footer />
             <WhatsAppButton />
-            <CustomCursor />
             <Toaster />
         </div>
     );

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
+import axios from 'axios';
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,22 +13,38 @@ const ContactSection = () => {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    // Mock form submission
-    toast({
-      title: 'Nachricht gesendet!',
-      description: 'Wir melden uns schnellstmöglich bei Ihnen zurück.',
-    });
+    try {
+      await axios.post('/api/contact', {
+        ...formData,
+        subject: `Kontaktanfrage Website: ${formData.name}`
+      });
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
-    });
+      toast({
+        title: 'Nachricht gesendet!',
+        description: 'Wir melden uns schnellstmöglich bei Ihnen zurück.',
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: 'Fehler beim Senden',
+        description: 'Bitte versuchen Sie es später erneut oder rufen Sie uns direkt an.',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -86,14 +104,14 @@ const ContactSection = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <h4 className="text-sm font-bold text-foreground/40 uppercase tracking-widest mb-2">Büro</h4>
+                      <h4 className="text-sm font-bold text-foreground/40 uppercase tracking-widest mb-2">Standort Wien</h4>
                       <p className="text-lg font-bold text-foreground leading-tight">
                         Adelheid-Popp-Gasse 16/1c<br />
                         1220 Wien, Österreich
                       </p>
                     </div>
                     <div>
-                      <h4 className="text-base font-bold text-foreground/40 uppercase tracking-widest mb-2">Werkstatt</h4>
+                      <h4 className="text-base font-bold text-foreground/40 uppercase tracking-widest mb-2">Standort Niederösterreich</h4>
                       <p className="text-xl font-bold text-foreground leading-tight">
                         Bahnstraße 4<br />
                         2283 Obersiebenbrunn
@@ -176,9 +194,10 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                className="w-full bg-primary text-white premium-button py-5 text-xl font-bold hover:bg-emerald-950"
+                disabled={isSubmitting}
+                className="w-full bg-primary text-white premium-button py-5 text-xl font-bold hover:bg-emerald-950 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Anfrage absenden
+                {isSubmitting ? 'Wird gesendet...' : 'Anfrage absenden'}
               </button>
             </form>
           </div>

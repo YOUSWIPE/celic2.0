@@ -36,7 +36,7 @@ body {
 
 @media (pointer: fine) {
     body {
-        cursor: none !important;
+        /* Default cursor restored */
     }
 
     a,
@@ -44,7 +44,7 @@ body {
     input,
     textarea,
     [role="button"] {
-        cursor: none !important;
+        cursor: pointer;
     }
 }
 
@@ -93,7 +93,7 @@ code {
         --card-foreground: 222 47% 11%;
         --popover: 0 0% 100%;
         --popover-foreground: 222 47% 11%;
-        --primary: 161 94% 20%;
+        --primary: 149 100% 32%;
         /* Deep Emerald Green */
         --primary-foreground: 210 40% 98%;
         --secondary: 45 93% 47%;
@@ -262,45 +262,6 @@ code {
 
     .reveal-delay-5 {
         transition-delay: 0.5s;
-    }
-
-    /* Custom Cursor Styles */
-    .custom-cursor {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 10px;
-        height: 10px;
-        background-color: hsl(var(--primary));
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        transition: transform 0.1s ease-out, background-color 0.3s ease;
-        box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
-    }
-
-    .custom-cursor-follower {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 40px;
-        height: 40px;
-        border: 2px solid hsl(var(--primary) / 0.5);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9998;
-        transition: transform 0.2s ease-out, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
-    }
-
-    .custom-cursor.hovering {
-        transform: scale(3);
-        background-color: hsl(var(--secondary));
-    }
-
-    .custom-cursor-follower.hovering {
-        transform: scale(1.5);
-        border-color: hsl(var(--secondary));
-        background-color: hsl(var(--secondary) / 0.1);
     }
 
     .animate-float {

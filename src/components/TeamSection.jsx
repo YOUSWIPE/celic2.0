@@ -3,25 +3,67 @@ import React from 'react';
 const TeamSection = () => {
   const team = [
     {
-      name: 'Stefan Müller',
+      name: 'Danijel Celic',
       role: 'Geschäftsführer',
-      description: '15+ Jahre Erfahrung im Schlüsseldienst. Spezialist für Sicherheitstechnik und Montagen.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
-      skills: ['Sicherheitstechnik', 'Beratung']
+      description: '',
+      image: '/images/danijel.webp',
+      skills: []
     },
     {
-      name: 'Maria Kovač',
-      role: 'Senior Technikerin',
-      description: 'Expertin für elektronische Schlösser und moderne Zutrittssysteme. 10 Jahre Berufserfahrung.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face',
-      skills: ['Elektronik', 'Installation']
+      name: 'Suzana Celic',
+      role: 'Assistentin der Geschäftsführung',
+      description: '',
+      image: '/images/suzana.webp',
+      skills: []
     },
     {
-      name: 'Thomas Weber',
-      role: 'Sicherheits-Experte',
-      description: 'Schnelle Türöffnungen und Reparaturen sind seine Spezialtät.',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
-      skills: ['Montage', 'Reparatur']
+      name: 'Anja Celic',
+      role: 'Assistentin der Geschäftsführung',
+      description: '',
+      image: '/images/anja.webp',
+      skills: []
+    },
+    {
+      name: 'Nebojsa Cikojevic',
+      role: 'Schlosser',
+      description: '',
+      image: '/images/nebojsa.webp',
+      skills: []
+    },
+    {
+      name: 'David Markovic',
+      role: 'Schlosser',
+      description: '',
+      image: '/images/david.webp',
+      skills: []
+    },
+    {
+      name: 'Slobodan Walchshofer',
+      role: 'Schlosser',
+      description: '',
+      image: '/images/slobodan.webp',
+      skills: []
+    },
+    {
+      name: 'Andrej Celic',
+      role: 'Lehrling',
+      description: '',
+      image: '/images/andrej.webp',
+      skills: []
+    },
+    {
+      name: 'Vladislav Undrul',
+      role: 'Lehrling',
+      description: '',
+      image: '/images/vladislav.webp',
+      skills: []
+    },
+    {
+      name: 'Charlie',
+      role: 'Empfangschef',
+      description: '',
+      image: '/images/charlie.webp',
+      skills: []
     }
   ];
 
@@ -51,7 +93,7 @@ const TeamSection = () => {
               key={index}
               className={`premium-card group reveal-up reveal-delay-${index + 1}`}
             >
-              <div className="relative h-96 overflow-hidden">
+              <div className="relative h-100 overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -59,12 +101,12 @@ const TeamSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#131515] via-[#131515]/20 to-transparent flex items-end">
                   <div className="p-8 text-white w-full">
-                    <p className="text-primary font-bold text-sm uppercase tracking-widest mb-2">{member.role}</p>
-                    <h3 className="text-3xl font-extrabold mb-1 tracking-tight">{member.name}</h3>
+                    <p className="font-bold text-sm uppercase tracking-widest mb-2">{member.role}</p>
+                    <h3 className="text-green-600 text-3xl font-extrabold mb-1 tracking-tight">{member.name}</h3>
                   </div>
                 </div>
               </div>
-              <div className="p-8 bg-card">
+              {/*<div className="p-8 bg-card">
                 <p className="text-foreground/70 mb-6 font-medium leading-relaxed">{member.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {member.skills.map((skill, idx) => (
@@ -76,7 +118,7 @@ const TeamSection = () => {
                     </span>
                   ))}
                 </div>
-              </div>
+              </div>*/}
             </div>
           ))}
         </div>

@@ -5,7 +5,6 @@ import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import Preloader from '../components/Preloader';
-import CustomCursor from '../components/CustomCursor';
 import { Toaster } from '../components/ui/toaster';
 import { Link } from 'react-router-dom';
 import { Wrench, ShieldCheck, Construction, ArrowRight } from 'lucide-react';
@@ -38,7 +37,7 @@ const HomePage = () => {
         {/* Services Teaser */}
         <section className="py-24 bg-card/30">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl font-extrabold mb-8 italic text-primary">Unsere Leistungen</h2>
+            <h2 className="text-4xl font-extrabold mb-8 text-primary">Unsere Leistungen</h2>
             <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto">
               Vom fachmännischen Metallbau bis zur Sicherheitstechnik – wir bieten erstklassigen Service in Wien.
             </p>
@@ -94,7 +93,7 @@ const HomePage = () => {
         <section className="py-24">
           <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <h2 className="text-4xl font-extrabold mb-6">Über <span className="text-primary italic">Celic GmbH</span></h2>
+              <h2 className="text-4xl font-extrabold mb-6">Über <span className="text-primary">Celic GmbH</span></h2>
               <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
                 Seit über 20 Jahren sind wir Ihr verlässlicher Partner in Wien. Als Familienunternehmen stehen Qualität und Kundenzufriedenheit für uns an erster Stelle.
               </p>
@@ -104,7 +103,7 @@ const HomePage = () => {
               </Link>
             </div>
             <div className="lg:w-1/2">
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Celic Team" className="rounded-2xl shadow-xl" />
+              <img src="/images/outdoor2.webp" alt="Celic Team" className="rounded-2xl shadow-xl" />
             </div>
           </div>
         </section>
@@ -112,7 +111,7 @@ const HomePage = () => {
         {/* Career Teaser */}
         <section className="py-24 bg-[#131515] text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Werde Teil unseres <span className="text-primary italic">Teams!</span></h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Werde Teil unseres <span className="text-primary">Teams!</span></h2>
             <p className="text-white/60 mb-10 max-w-xl mx-auto">
               Wir suchen motivierte Schlosser und Lehrlinge, die mit uns die Sicherheit Wiens gestalten wollen.
             </p>
@@ -126,7 +125,6 @@ const HomePage = () => {
 
         <Footer />
         <WhatsAppButton />
-        <CustomCursor />
         <Toaster />
       </div>
     </>

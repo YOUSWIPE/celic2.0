@@ -1,28 +1,50 @@
 import React, { useState } from 'react';
 import { Briefcase, Send, Check } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
+import axios from 'axios';
+
+const JOBS = [
+];
 
 const KarriereSection = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [applicationData, setApplicationData] = useState({
     name: '',
     email: '',
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    toast({
-      title: 'Bewerbung eingegangen!',
-      description: 'Vielen Dank für Ihr Interesse. Wir melden uns bald bei Ihnen.',
-    });
+    try {
+      await axios.post('/api/contact', {
+        ...applicationData,
+        subject: `Initiativbewerbung von ${applicationData.name}`
+      });
 
-    setApplicationData({
-      name: '',
-      email: '',
-      message: ''
-    });
+      toast({
+        title: 'Bewerbung eingegangen!',
+        description: 'Vielen Dank für Ihr Interesse. Wir melden uns bald bei Ihnen.',
+      });
+
+      setApplicationData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      toast({
+        title: 'Fehler beim Senden',
+        description: 'Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt.',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -50,62 +72,74 @@ const KarriereSection = () => {
         </div>
 
         <div className="max-w-5xl mx-auto space-y-12">
-          {/* Job Listing */}
-          <div className="premium-card p-12 bg-card border-none dark:border dark:border-white/5 reveal-scale reveal-delay-1">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-10">
-              <div className="flex items-center space-x-6">
-                <div className="w-20 h-20 bg-primary/5 rounded-3xl flex items-center justify-center flex-shrink-0">
-                  <Briefcase size={36} className="text-primary" />
+          {JOBS.length > 0 ? (
+            JOBS.map((job, index) => (
+              <div
+                key={index}
+                className={`premium-card p-12 bg-card border-none dark:border dark:border-white/5 reveal-scale reveal-delay-${index + 1}`}
+              >
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-10">
+                  <div className="flex items-center space-x-6">
+                    <div className="w-20 h-20 bg-primary/5 rounded-3xl flex items-center justify-center flex-shrink-0">
+                      <Briefcase size={36} className="text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-3xl font-extrabold text-foreground mb-2 tracking-tight">
+                        {job.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-4 text-xs font-bold uppercase tracking-widest text-gray-400">
+                        <span className="px-4 py-1.5 bg-primary/5 text-foreground rounded-full">{job.type}</span>
+                        <span className="px-4 py-1.5 bg-primary/5 text-foreground rounded-full">{job.location}</span>
+                        <span className="px-4 py-1.5 bg-primary/10 text-primary rounded-full">{job.availability}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="bg-primary text-white premium-button px-10 py-4"
+                  >
+                    Jetzt bewerben
+                  </button>
                 </div>
-                <div>
-                  <h3 className="text-3xl font-extrabold text-foreground mb-2 tracking-tight">
-                    Allgemeinschlosser (m/w/d)
-                  </h3>
-                  <div className="flex flex-wrap gap-4 text-xs font-bold uppercase tracking-widest text-gray-400">
-                    <span className="px-4 py-1.5 bg-primary/5 text-foreground rounded-full">Vollzeit</span>
-                    <span className="px-4 py-1.5 bg-primary/5 text-foreground rounded-full">Wien</span>
-                    <span className="px-4 py-1.5 bg-primary/10 text-primary rounded-full">Sofort</span>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                  <div className="space-y-6">
+                    <h4 className="text-xl font-extrabold text-foreground tracking-tight">Ihre Aufgaben:</h4>
+                    <ul className="space-y-4">
+                      {job.tasks.map((task, i) => (
+                        <li key={i} className="flex items-center text-foreground/70 font-medium">
+                          <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-3">
+                            <Check size={14} className="text-primary" />
+                          </div>
+                          {task}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="space-y-6">
+                    <h4 className="text-xl font-extrabold text-foreground tracking-tight">Wir bieten:</h4>
+                    <ul className="space-y-4">
+                      {job.benefits.map((offer, i) => (
+                        <li key={i} className="flex items-center text-foreground/70 font-medium">
+                          <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-3">
+                            <Check size={14} className="text-primary" />
+                          </div>
+                          {offer}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
-              <button
-                onClick={() => document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-primary text-white premium-button px-10 py-4"
-              >
-                Jetzt bewerben
-              </button>
+            ))
+          ) : (
+            <div className="premium-card p-12 bg-card/50 text-center reveal-scale">
+              <p className="text-xl font-medium text-foreground/70">
+                Aktuell haben wir keine offenen Stellen. Wir freuen uns jedoch über Ihre <span className="text-primary italic">Initiativbewerbung</span>!
+              </p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="space-y-6">
-                <h4 className="text-xl font-extrabold text-foreground tracking-tight">Ihre Aufgaben:</h4>
-                <ul className="space-y-4">
-                  {['Eigenständige Reparaturen', 'Installation von Sicherheitstechnik', 'Kompetente Kundenberatung vor Ort'].map((task, i) => (
-                    <li key={i} className="flex items-center text-foreground/70 font-medium">
-                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-3">
-                        <Check size={14} className="text-primary" />
-                      </div>
-                      {task}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="space-y-6">
-                <h4 className="text-xl font-extrabold text-foreground tracking-tight">Wir bieten:</h4>
-                <ul className="space-y-4">
-                  {['Attraktives Gehalt nach Qualifikation', 'Moderner Firmenwagen & Ausrüstung', 'Regelmäßige Weiterbildung & Schulung'].map((offer, i) => (
-                    <li key={i} className="flex items-center text-foreground/70 font-medium">
-                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-3">
-                        <Check size={14} className="text-primary" />
-                      </div>
-                      {offer}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
+          )}
 
           {/* Initiativbewerbung Form */}
           <div id="application-form" className="premium-card p-12 bg-[#131515] reveal-scale reveal-delay-2">
@@ -149,9 +183,10 @@ const KarriereSection = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-primary text-white premium-button py-4 text-lg font-extrabold hover:bg-emerald-600"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary text-white premium-button py-4 text-lg font-extrabold hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Bewerbung absenden
+                  {isSubmitting ? 'Wird gesendet...' : 'Bewerbung absenden'}
                 </button>
               </form>
             </div>

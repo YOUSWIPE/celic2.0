@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContactSection from '../components/ContactSection';
 import WhatsAppButton from '../components/WhatsAppButton';
-import CustomCursor from '../components/CustomCursor';
 import { Toaster } from '../components/ui/toaster';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import useScrollReveal from '../hooks/use-scroll-reveal';
@@ -58,7 +57,6 @@ const ContactPage = () => {
             </div>
             <Footer />
             <WhatsAppButton />
-            <CustomCursor />
             <Toaster />
         </div>
     );

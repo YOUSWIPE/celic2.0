@@ -13,7 +13,7 @@ const ServicesSection = () => {
       details: 'Unsere Experten reparieren Einbruchschäden, verschlissene Beschläge und defekte Schlösser. Wir sorgen dafür, dass Ihre Zugänge wieder reibungslos und sicher funktionieren.',
       features: ['Türreparatur', 'Fensterinstandsetzung', 'Tore & Gitter', 'Beschlagswechsel'],
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop',
-      price: 'Ab 89€'
+      price: ''
     },
     {
       icon: Key,
@@ -22,16 +22,16 @@ const ServicesSection = () => {
       details: 'Vom eleganten Handlauf bis zum massiven Sicherheitstor – wir fertigen individuelle Metallkonstruktionen, die höchste Sicherheitsansprüche mit ästhetischem Design verbinden.',
       features: ['Handläufe & Zäune', 'Sicherheitsgitter', 'Spezialanfertigungen', 'Montageservice'],
       image: 'https://images.unsplash.com/photo-1580047750144-2c7790adf461?auto=format&fit=crop&q=80&w=800',
-      price: 'Auf Anfrage'
+      price: ''
     },
     {
       icon: Shield,
       title: 'Sicherheitstechnik',
       description: 'Ganzheitliche Konzepte für optimalen Einbruchschutz.',
       details: 'Wir analysieren Schwachstellen und installieren hochmoderne Schließanlagen, Sicherheitstüren und Zusatzsicherungen namhafter Hersteller.',
-      features: ['Schließanlagen', 'Sicherheitstüren', 'Alarmanlagen', 'Zutrittskontrolle'],
+      features: ['Schließanlagen', 'Sicherheitstüren', 'Brandschutztüren', 'Zutrittskontrolle'],
       image: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?w=800&h=600&fit=crop',
-      price: 'Ab 149€'
+      price: ''
     }
   ];
 
