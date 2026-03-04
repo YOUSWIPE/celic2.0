@@ -1,4 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+const TeamMember = ({ member, index }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  return (
+    <div
+      key={index}
+      className={`premium-card group reveal-up reveal-delay-${index + 1}`}
+    >
+      <div className="relative h-100 overflow-hidden bg-muted/20 aspect-[3/4]">
+        {!imageLoaded && (
+          <div className="absolute inset-0 z-10 animate-pulse bg-gradient-to-r from-muted/20 via-muted/40 to-muted/20 bg-[length:200%_100%] animate-shimmer"></div>
+        )}
+
+        <img
+          src={member.image}
+          alt={member.name}
+          loading="lazy"
+          onLoad={() => setImageLoaded(true)}
+          className={`w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0 ${imageLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-[#131515] via-[#131515]/20 to-transparent flex items-end">
+          <div className="p-8 text-white w-full">
+            <p className="font-bold text-sm uppercase tracking-widest mb-2">{member.role}</p>
+            <h3 className="text-green-600 text-3xl font-extrabold mb-1 tracking-tight">{member.name}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const TeamSection = () => {
   const team = [
