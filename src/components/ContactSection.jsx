@@ -66,7 +66,7 @@ const ContactSection = () => {
             Ihr Fachmann vor Ort
           </div>
           <h2 className="text-4xl md:text-6xl font-extrabold mb-6 text-foreground tracking-tight">
-            Kontaktieren <span className="text-primary italic">Sie uns</span>
+            Kontaktieren <span className="text-primary ">Sie uns</span>
           </h2>
           <div className="w-24 h-1.5 bg-secondary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto font-medium">
@@ -127,7 +127,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="text-sm font-bold text-foreground/40 uppercase tracking-widest mb-1">Öffnungszeiten</h4>
                     <p className="text-lg font-bold text-foreground">
-                      Mo-Do: 08:00 - 17:00 | Fr: 08:00 - 13:00
+                      Mo-Fr: 08:00 - 12:00 | 13:00 - 17:00
                     </p>
                   </div>
                 </div>

@@ -17,7 +17,7 @@ const KarrierePage = () => {
                 {/* Additional Benefits */}
                 <section className="py-24 bg-[#131515] text-white">
                     <div className="container mx-auto px-4">
-                        <h2 className="text-4xl font-extrabold mb-16 text-center">Warum <span className="text-primary italic">Celic GmbH?</span></h2>
+                        <h2 className="text-4xl font-extrabold mb-16 text-center">Warum <span className="text-primary">Wir?</span></h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {[
                                 { title: 'Sicherer Job', desc: 'Langfristige Perspektive in einem wachsenden Unternehmen.' },

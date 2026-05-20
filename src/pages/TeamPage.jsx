@@ -17,7 +17,7 @@ const TeamPage = () => {
                 {/* Team Philosophy */}
                 <section className="py-24 bg-card/30">
                     <div className="container mx-auto px-4 text-center">
-                        <h2 className="text-4xl font-extrabold mb-12">Unsere <span className="text-primary italic">Philosophie</span></h2>
+                        <h2 className="text-4xl font-extrabold mb-12">Unsere <span className="text-primary">Philosophie</span></h2>
                         <div className="max-w-3xl mx-auto space-y-6 text-xl text-foreground/70 leading-relaxed font-medium">
                             <p>
                                 Hinter jedem erfolgreichen Projekt steht ein starkes Team. Bei Celic GmbH fördern wir unsere Mitarbeiter und investieren kontinuierlich in Ausbildung und modernste Ausrüstung.

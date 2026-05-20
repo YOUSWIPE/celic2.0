@@ -61,7 +61,7 @@ const HeroSection = () => {
 
           <h1 className="text-5xl md:text-8xl font-extrabold text-white leading-[1.1] tracking-tight max-w-5xl mx-auto">
             Sicherheit, die <br />
-            <span className="text-primary italic">Maßstäbe</span> setzt.
+            <span className="text-primary ">Maßstäbe</span> setzt.
           </h1>
 
           <p className="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto font-medium leading-relaxed reveal-up reveal-delay-2">

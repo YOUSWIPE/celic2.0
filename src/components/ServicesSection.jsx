@@ -105,7 +105,7 @@ const ServicesSection = () => {
             Was wir bieten
           </div>
           <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-foreground tracking-tight">
-            Unsere <span className="text-primary italic border-b-4 border-secondary/30">Dienstleistungen</span>
+            Unsere <span className="text-primary border-b-4 border-secondary/30">Dienstleistungen</span>
           </h2>
           <div className="w-24 h-1.5 bg-secondary mx-auto mb-8 rounded-full shadow-[0_4px_10px_rgba(217,119,6,0.3)]"></div>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto font-medium">

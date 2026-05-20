@@ -112,7 +112,7 @@ const TeamSection = () => {
             Experten vor Ort
           </div>
           <h2 className="text-4xl md:text-6xl font-extrabold mb-6 text-foreground tracking-tight">
-            Unser <span className="text-primary italic">Expertenteam</span>
+            Unser <span className="text-primary">Expertenteam</span>
           </h2>
           <div className="w-24 h-1.5 bg-secondary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto font-medium">

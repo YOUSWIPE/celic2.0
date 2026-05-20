@@ -17,7 +17,7 @@ const AboutPage = () => {
                 <section className="py-24 bg-[#131515] text-white">
                     <div className="container mx-auto px-4">
                         <div className="max-w-4xl mx-auto text-center">
-                            <h2 className="text-4xl md:text-5xl font-extrabold mb-10 tracking-tight">Unsere <span className="text-primary italic">Geschichte & Werte</span></h2>
+                            <h2 className="text-4xl md:text-5xl font-extrabold mb-10 tracking-tight">Unsere <span className="text-primary ">Geschichte & Werte</span></h2>
                             <div className="space-y-8 text-lg text-white/80 leading-relaxed font-medium">
                                 <p>
                                     Gegründet im Jahr 2017 und seit 2018 als GmbH geführt, hat sich die Schlosserei Celic GmbH schnell als einer der führenden Dienstleister für Sicherheitstechnik und Metallbau in Wien etabliert. Unter der Leitung von Danijel Čelić setzen wir auf ein starkes Team aus Fachkräften und Lehrlingen.

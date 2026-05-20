@@ -63,7 +63,7 @@ const KarriereSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-24 reveal-up">
           <h2 className="text-4xl md:text-6xl font-extrabold mb-6 text-foreground tracking-tight">
-            Karriere bei <span className="text-primary italic">Celic GmbH</span>
+            Karriere bei <span className="text-primary">uns</span>
           </h2>
           <div className="w-24 h-1.5 bg-secondary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto font-medium">
@@ -136,7 +136,7 @@ const KarriereSection = () => {
           ) : (
             <div className="premium-card p-12 bg-card/50 text-center reveal-scale">
               <p className="text-xl font-medium text-foreground/70">
-                Aktuell haben wir keine offenen Stellen. Wir freuen uns jedoch über Ihre <span className="text-primary italic">Initiativbewerbung</span>!
+                Aktuell haben wir keine offenen Stellen. Wir freuen uns jedoch über Ihre <span className="text-primary ">Initiativbewerbung</span>!
               </p>
             </div>
           )}

@@ -13,9 +13,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="text-3xl font-extrabold tracking-tight">
-              <span className='text-foreground'>Schlosserei </span>
-              <span className="text-primary italic">Celic</span>
-              <span className="text-foreground"> GmbH</span>
+              <img src='logo-no-bg.png' alt="Logo" className="h-12 w-auto" />
+
             </div>
             <p className="text-foreground/50 font-medium leading-relaxed">
               Ihr zuverlässiger Partner für Sicherheitstechnik und Schlosserei in Wien – seit über zwei Jahrzehnten.
@@ -82,7 +81,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border pt-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-foreground/30 font-bold text-sm">© 2025 Celic GmbH. Alle Rechte vorbehalten.</p>
+            <p className="text-foreground/30 font-bold text-sm">© 2026 Celic GmbH. Alle Rechte vorbehalten.</p>
             <div className="flex space-x-8">
               {['Datenschutz', 'Impressum', 'AGB'].map((label) => (
                 <a key={label} href="#" className="text-foreground/30 font-bold text-sm hover:text-primary transition-colors underline decoration-foreground/10 underline-offset-4">

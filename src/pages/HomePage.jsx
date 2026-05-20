@@ -110,14 +110,19 @@ const HomePage = () => {
 
         {/* Career Teaser */}
         <section className="py-24 bg-[#131515] text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Werde Teil unseres <span className="text-primary">Teams!</span></h2>
-            <p className="text-white/60 mb-10 max-w-xl mx-auto">
-              Wir suchen motivierte Schlosser und Lehrlinge, die mit uns die Sicherheit Wiens gestalten wollen.
-            </p>
-            <Link to="/karriere" className="bg-white text-black hover:bg-primary hover:text-white px-10 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 inline-block">
-              Offene Stellen ansehen
-            </Link>
+          <div className="container mx-auto px-4 flex flex-col lg:flex-row-reverse items-center gap-16">
+            <div className="lg:w-1/2 text-center lg:text-left">
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Werde Teil unseres <span className="text-primary">Teams!</span></h2>
+              <p className="text-white/60 mb-10 max-w-xl mx-auto lg:mx-0">
+                Wir suchen motivierte Schlosser und Lehrlinge, die mit uns die Sicherheit Wiens gestalten wollen.
+              </p>
+              <Link to="/karriere" className="bg-white text-black hover:bg-primary hover:text-white px-10 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 inline-block">
+                Offene Stellen ansehen
+              </Link>
+            </div>
+            <div className="lg:w-1/2">
+              <img src="/images/Team.webp" alt="Unser Team" className="rounded-2xl shadow-2xl w-full object-cover" />
+            </div>
           </div>
         </section>
 

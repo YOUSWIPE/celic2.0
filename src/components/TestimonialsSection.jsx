@@ -31,7 +31,7 @@ const TestimonialsSection = () => {
             Kundenmeinungen
           </div>
           <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-foreground tracking-tight">
-            Was unsere <span className="text-primary italic">Kunden sagen</span>
+            Was unsere <span className="text-primary">Kunden sagen</span>
           </h2>
           <div className="w-24 h-1.5 bg-secondary mx-auto rounded-full"></div>
         </div>
@@ -50,7 +50,7 @@ const TestimonialsSection = () => {
                   </svg>
                 ))}
               </div>
-              <p className="text-xl text-foreground/70 mb-8 italic leading-relaxed font-medium">"{testimonial.text}"</p>
+              <p className="text-xl text-foreground/70 mb-8  leading-relaxed font-medium">"{testimonial.text}"</p>
               <div className="flex items-center space-x-4 border-t border-gray-100 pt-8">
                 <div className="w-12 h-12 bg-[#131515] rounded-full flex items-center justify-center font-bold text-white shadow-lg">
                   {testimonial.author.charAt(0)}

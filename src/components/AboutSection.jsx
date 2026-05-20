@@ -47,7 +47,7 @@ const AboutSection = () => {
               Expertise & Vertrauen
             </div>
             <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-foreground tracking-tight leading-tight">
-              Seit über 20 Jahren Ihr <span className="text-primary italic">verlässlicher Partner</span>
+              Seit über 20 Jahren Ihr <span className="text-primary ">verlässlicher Partner</span>
             </h2>
             <p className="text-xl text-foreground/70 mb-8 leading-relaxed">
               Die Celic GmbH steht für Qualität, Sicherheit und transparente Preise. Als traditionsreiches Familienunternehmen in Wien verbinden wir handwerkliches Können mit modernster Sicherheitstechnik.
