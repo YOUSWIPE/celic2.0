@@ -93,7 +93,7 @@ const HomePage = () => {
         <section className="py-24">
           <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <h2 className="text-4xl font-extrabold mb-6">Über <span className="text-primary">Celic GmbH</span></h2>
+              <h2 className="text-4xl font-extrabold mb-6">Über <span className="text-primary">Uns</span></h2>
               <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
                 Seit über 20 Jahren sind wir Ihr verlässlicher Partner in Wien. Als Familienunternehmen stehen Qualität und Kundenzufriedenheit für uns an erster Stelle.
               </p>
